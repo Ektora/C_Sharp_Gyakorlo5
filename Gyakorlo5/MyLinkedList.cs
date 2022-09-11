@@ -36,42 +36,153 @@ namespace MyLinkedList
 
         public bool IsEmpty()
         {
-            // Write your code here
+            if (Size == 0)
+                return true;
+            return false;
         }
 
         public bool AddFirst(int val)
         {
-            // Write your code here
+            if(IsEmpty())
+            {
+                Head = new Node(val);
+            }
+            else
+            {
+                Node uj = new Node(val);
+                uj.Next = Head;
+                Head = uj;
+            }
+            Size++;
+            return true;
         }
 
         public bool AddLast(int val)
         {
-            // Write your code here
+            if (IsEmpty())
+            {
+                Head = new Node(val);
+            }
+            else
+            {
+                Node seged = Head;
+                while (seged.Next != null)
+                {
+                    seged = seged.Next;
+                }
+                seged.Next = new Node(val);
+            }
+            Size++;
+            return true;
         }
 
         public bool RemoveFirst()
         {
-            // Write your code here
+            if (IsEmpty())
+            {
+                return false;
+            }
+            else if (Size == 1)
+            {
+                Head = null;
+                Size = 0;
+                return true;
+            }
+            else
+            {
+                Head = Head.Next;
+                Size--;
+            }
+            return true;
         }
 
         public bool RemoveLast()
         {
-            // Write your code here
+            if (IsEmpty())
+            {
+                return false;
+            }
+            else if (Size == 1)
+            {
+                Head = null;
+                Size = 0;
+                return true;
+            }
+            else
+            {
+                Node seged = Head;
+                while (seged.Next.Next != null)
+                {
+                    seged = seged.Next;
+                }
+                seged.Next = null;
+                Size--;
+            }
+            return true;
         }
 
         public bool RemoveFirstOccurrence(int val)
         {
-            // Write your code here
+            if (IsEmpty() || !Contains(val))
+            {
+                return false;
+            }
+            else if(Head.Value == val)
+            {
+                RemoveFirst();
+            }
+            else
+            {
+                Node seged = Head;
+                while(seged.Next != null)
+                {
+                    if(seged.Next.Value == val)
+                    {
+                        seged.Next = seged.Next.Next;
+                        Size--;
+                        return true;
+                    }
+                    seged = seged.Next;
+                }
+                
+                
+            }
+            return true;
         }
 
         public bool RemoveAll(int val)
         {
-            // Write your code here
+            if (IsEmpty() || !Contains(val))
+            {
+                return false;
+            }
+            else
+            {
+                while (Contains(val))
+                {
+                    RemoveFirstOccurrence(val);
+                }
+            }
+            return true;
         }
 
         public bool Contains(int val)
         {
-            // Write your code here
+            if (IsEmpty())
+            {
+                return false;
+            }
+            else
+            {
+                Node seged = Head;
+                while(seged != null)
+                {
+                    if (seged.Value == val)
+                        return true;
+                    seged = seged.Next;
+                }
+            }
+            return false;
         }
 
         public override string ToString()
