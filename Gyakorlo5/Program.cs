@@ -1,4 +1,4 @@
-﻿namespace MyLinkedList
+﻿namespace Gyakorlo5
 {
     public class Gyakorlo5
     {
@@ -40,6 +40,33 @@
             Console.WriteLine("removeFirst: " + ml.RemoveFirst() + " " + ml + " size: " + ml.Size);
             Console.WriteLine("removeFirst: " + ml.RemoveFirst() + " " + ml + " size: " + ml.Size);
             Console.WriteLine("removeLast: " + ml.RemoveLast() + " " + ml + " size: " + ml.Size);
+
+            // Bináris kereső fa
+
+            BinarySearchTree bst = new BinarySearchTree();
+            Console.WriteLine(bst);
+            Console.WriteLine("Insert 27: " + bst.Insert(27) + " " + bst);
+            Console.WriteLine("Insert 48: " + bst.Insert(48) + " " + bst);
+            Console.WriteLine("Insert 33: " + bst.Insert(33) + " " + bst);
+            Console.WriteLine("Insert 81: " + bst.Insert(81) + " " + bst);
+            Console.WriteLine("Insert 14: " + bst.Insert(14) + " " + bst);
+            Console.WriteLine("Insert 48: " + bst.Insert(48) + " " + bst);
+            Console.WriteLine("Insert 39: " + bst.Insert(39) + " " + bst);
+            Console.WriteLine("Insert 72: " + bst.Insert(72) + " " + bst);
+            Console.WriteLine(bst.Contains(33));
+            Console.WriteLine(bst.Contains(32));
+            Console.WriteLine("Remove 81: " + bst.Remove(81) + " " + bst);
+            Console.WriteLine("Remove 48: " + bst.Remove(48) + " " + bst);
+            Console.WriteLine("Remove 27: " + bst.Remove(27) + " " + bst);
+            Console.WriteLine("Remove 72: " + bst.Remove(72) + " " + bst);
+            Console.WriteLine("Remove 33: " + bst.Remove(33) + " " + bst);
+            Console.WriteLine("Remove 44: " + bst.Remove(44) + " " + bst);
+            Console.WriteLine("Remove 39: " + bst.Remove(39) + " " + bst);
+            Console.WriteLine("Remove 14: " + bst.Remove(14) + " " + bst);
+            Console.WriteLine("Remove 48: " + bst.Remove(48) + " " + bst);
+            Console.WriteLine("Remove 27: " + bst.Remove(27) + " " + bst);
+
+
         }
     }
 }
